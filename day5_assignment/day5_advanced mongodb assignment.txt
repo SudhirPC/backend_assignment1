@@ -1,0 +1,1722 @@
+Microsoft Windows [Version 10.0.22000.556]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Sudhir P Chavhan>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("e0a96d08-e93b-4657-ab28-815f4515da0b") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-09T18:56:18.693+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin        0.000GB
+config       0.000GB
+local        0.000GB
+mock_movies  0.000GB
+users        0.000GB
+> use moc_movies
+switched to db moc_movies
+> db.dropDatabase()
+{ "ok" : 1 }
+> show dbs
+admin        0.000GB
+config       0.000GB
+local        0.000GB
+mock_movies  0.000GB
+users        0.000GB
+> use mock_movies
+switched to db mock_movies
+> use movies
+switched to db movies
+> db.movies.find({})
+> use mock_movies
+switched to db mock_movies
+> db.mock_movies.find({})
+> show dbs
+admin        0.000GB
+config       0.000GB
+local        0.000GB
+mock_movies  0.000GB
+users        0.000GB
+> use mock_movies
+switched to db mock_movies
+> show collections
+movies
+> db.movies.find({})
+{ "_id" : ObjectId("622a034e628eb4720550682b"), "id" : 1, "movie_name" : "Going the Distance", "movie_genre" : "Comedy|Romance", "production_year" : 1996, "budget" : 12118 }
+{ "_id" : ObjectId("622a034e628eb4720550682c"), "id" : 2, "movie_name" : "Seasoning House, The", "movie_genre" : "Horror|Thriller", "production_year" : 1994, "budget" : 12373 }
+{ "_id" : ObjectId("622a034e628eb4720550682d"), "id" : 3, "movie_name" : "English Surgeon, The", "movie_genre" : "Documentary", "production_year" : 1999, "budget" : 11939 }
+{ "_id" : ObjectId("622a034e628eb4720550682e"), "id" : 4, "movie_name" : "Godzilla", "movie_genre" : "Action|Sci-Fi|Thriller", "production_year" : 2002, "budget" : 14244 }
+{ "_id" : ObjectId("622a034e628eb4720550682f"), "id" : 5, "movie_name" : "All About Steve", "movie_genre" : "Comedy", "production_year" : 2009, "budget" : 16545 }
+{ "_id" : ObjectId("622a034e628eb47205506830"), "id" : 6, "movie_name" : "Möbius", "movie_genre" : "Drama|Thriller", "production_year" : 1998, "budget" : 16730 }
+{ "_id" : ObjectId("622a034e628eb47205506831"), "id" : 7, "movie_name" : "Children of a Lesser God", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 10138 }
+{ "_id" : ObjectId("622a034e628eb47205506832"), "id" : 8, "movie_name" : "Tobruk", "movie_genre" : "Drama|War", "production_year" : 2007, "budget" : 15316 }
+{ "_id" : ObjectId("622a034e628eb47205506833"), "id" : 9, "movie_name" : "Romancing the Stone", "movie_genre" : "Action|Adventure|Comedy|Romance", "production_year" : 1992, "budget" : 12515 }
+{ "_id" : ObjectId("622a034e628eb47205506834"), "id" : 10, "movie_name" : "Anvil! The Story of Anvil", "movie_genre" : "Documentary|Musical", "production_year" : 2000, "budget" : 13004 }
+{ "_id" : ObjectId("622a034e628eb47205506835"), "id" : 11, "movie_name" : "Tightrope", "movie_genre" : "Thriller", "production_year" : 1997, "budget" : 14036 }
+{ "_id" : ObjectId("622a034e628eb47205506836"), "id" : 12, "movie_name" : "Sabotage", "movie_genre" : "Action|Crime|Drama", "production_year" : 1991, "budget" : 11349 }
+{ "_id" : ObjectId("622a034e628eb47205506837"), "id" : 13, "movie_name" : "O Auto da Compadecida (Dog's Will, A)", "movie_genre" : "Adventure|Comedy", "production_year" : 1991, "budget" : 9457 }
+{ "_id" : ObjectId("622a034e628eb47205506838"), "id" : 14, "movie_name" : "Zorro, the Gay Blade", "movie_genre" : "Comedy", "production_year" : 1993, "budget" : 15596 }
+{ "_id" : ObjectId("622a034e628eb47205506839"), "id" : 15, "movie_name" : "Lonesome Dove", "movie_genre" : "Adventure|Drama|Western", "production_year" : 2006, "budget" : 12346 }
+{ "_id" : ObjectId("622a034e628eb4720550683a"), "id" : 16, "movie_name" : "Cheech & Chong's Next Movie", "movie_genre" : "Comedy", "production_year" : 2007, "budget" : 19448 }
+{ "_id" : ObjectId("622a034e628eb4720550683b"), "id" : 17, "movie_name" : "Sinbad of the Seven Seas", "movie_genre" : "Adventure|Fantasy|Romance", "production_year" : 2009, "budget" : 19068 }
+{ "_id" : ObjectId("622a034e628eb4720550683c"), "id" : 18, "movie_name" : "Masti", "movie_genre" : "Comedy", "production_year" : 2018, "budget" : 16806 }
+{ "_id" : ObjectId("622a034e628eb4720550683d"), "id" : 19, "movie_name" : "Yesterday Girl (Abschied von gestern - Anita G.)", "movie_genre" : "Comedy|Romance", "production_year" : 2000, "budget" : 15882 }
+{ "_id" : ObjectId("622a034e628eb4720550683e"), "id" : 20, "movie_name" : "Pandora's Box", "movie_genre" : "Drama|Thriller", "production_year" : 1998, "budget" : 18005 }
+Type "it" for more
+> db.movies.find({movie_name:{$eq:"Masti"}}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb4720550683c"),
+        "id" : 18,
+        "movie_name" : "Masti",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 16806
+}> db.movies.find({movie_name:{$ne:"Masti"}}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb4720550682b"),
+        "id" : 1,
+        "movie_name" : "Going the Distance",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1996,
+        "budget" : 12118
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682c"),
+        "id" : 2,
+        "movie_name" : "Seasoning House, The",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1994,
+        "budget" : 12373
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682d"),
+        "id" : 3,
+        "movie_name" : "English Surgeon, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 1999,
+        "budget" : 11939
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682e"),
+        "id" : 4,
+        "movie_name" : "Godzilla",
+        "movie_genre" : "Action|Sci-Fi|Thriller",
+        "production_year" : 2002,
+        "budget" : 14244
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682f"),
+        "id" : 5,
+        "movie_name" : "All About Steve",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 16545
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506830"),
+        "id" : 6,
+        "movie_name" : "Möbius",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 16730
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506831"),
+        "id" : 7,
+        "movie_name" : "Children of a Lesser God",
+        "movie_genre" : "Drama",
+        "production_year" : 2002,
+        "budget" : 10138
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506832"),
+        "id" : 8,
+        "movie_name" : "Tobruk",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2007,
+        "budget" : 15316
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506833"),
+        "id" : 9,
+        "movie_name" : "Romancing the Stone",
+        "movie_genre" : "Action|Adventure|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 12515
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506834"),
+        "id" : 10,
+        "movie_name" : "Anvil! The Story of Anvil",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2000,
+        "budget" : 13004
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506835"),
+        "id" : 11,
+        "movie_name" : "Tightrope",
+        "movie_genre" : "Thriller",
+        "production_year" : 1997,
+        "budget" : 14036
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506836"),
+        "id" : 12,
+        "movie_name" : "Sabotage",
+        "movie_genre" : "Action|Crime|Drama",
+        "production_year" : 1991,
+        "budget" : 11349
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506837"),
+        "id" : 13,
+        "movie_name" : "O Auto da Compadecida (Dog's Will, A)",
+        "movie_genre" : "Adventure|Comedy",
+        "production_year" : 1991,
+        "budget" : 9457
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506838"),
+        "id" : 14,
+        "movie_name" : "Zorro, the Gay Blade",
+        "movie_genre" : "Comedy",
+        "production_year" : 1993,
+        "budget" : 15596
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506839"),
+        "id" : 15,
+        "movie_name" : "Lonesome Dove",
+        "movie_genre" : "Adventure|Drama|Western",
+        "production_year" : 2006,
+        "budget" : 12346
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683a"),
+        "id" : 16,
+        "movie_name" : "Cheech & Chong's Next Movie",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 19448
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683b"),
+        "id" : 17,
+        "movie_name" : "Sinbad of the Seven Seas",
+        "movie_genre" : "Adventure|Fantasy|Romance",
+        "production_year" : 2009,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683d"),
+        "id" : 19,
+        "movie_name" : "Yesterday Girl (Abschied von gestern - Anita G.)",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2000,
+        "budget" : 15882
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683e"),
+        "id" : 20,
+        "movie_name" : "Pandora's Box",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 18005
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683f"),
+        "id" : 21,
+        "movie_name" : "Out of the Fog",
+        "movie_genre" : "Crime|Drama|Film-Noir",
+        "production_year" : 2000,
+        "budget" : 12679
+}
+Type "it" for more
+> db.movies.find({"budget": {$gte: 12000}}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb4720550682b"),
+        "id" : 1,
+        "movie_name" : "Going the Distance",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1996,
+        "budget" : 12118
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682c"),
+        "id" : 2,
+        "movie_name" : "Seasoning House, The",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1994,
+        "budget" : 12373
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682e"),
+        "id" : 4,
+        "movie_name" : "Godzilla",
+        "movie_genre" : "Action|Sci-Fi|Thriller",
+        "production_year" : 2002,
+        "budget" : 14244
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682f"),
+        "id" : 5,
+        "movie_name" : "All About Steve",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 16545
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506830"),
+        "id" : 6,
+        "movie_name" : "Möbius",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 16730
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506832"),
+        "id" : 8,
+        "movie_name" : "Tobruk",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2007,
+        "budget" : 15316
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506833"),
+        "id" : 9,
+        "movie_name" : "Romancing the Stone",
+        "movie_genre" : "Action|Adventure|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 12515
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506834"),
+        "id" : 10,
+        "movie_name" : "Anvil! The Story of Anvil",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2000,
+        "budget" : 13004
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506835"),
+        "id" : 11,
+        "movie_name" : "Tightrope",
+        "movie_genre" : "Thriller",
+        "production_year" : 1997,
+        "budget" : 14036
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506838"),
+        "id" : 14,
+        "movie_name" : "Zorro, the Gay Blade",
+        "movie_genre" : "Comedy",
+        "production_year" : 1993,
+        "budget" : 15596
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506839"),
+        "id" : 15,
+        "movie_name" : "Lonesome Dove",
+        "movie_genre" : "Adventure|Drama|Western",
+        "production_year" : 2006,
+        "budget" : 12346
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683a"),
+        "id" : 16,
+        "movie_name" : "Cheech & Chong's Next Movie",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 19448
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683b"),
+        "id" : 17,
+        "movie_name" : "Sinbad of the Seven Seas",
+        "movie_genre" : "Adventure|Fantasy|Romance",
+        "production_year" : 2009,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683c"),
+        "id" : 18,
+        "movie_name" : "Masti",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 16806
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683d"),
+        "id" : 19,
+        "movie_name" : "Yesterday Girl (Abschied von gestern - Anita G.)",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2000,
+        "budget" : 15882
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683e"),
+        "id" : 20,
+        "movie_name" : "Pandora's Box",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 18005
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683f"),
+        "id" : 21,
+        "movie_name" : "Out of the Fog",
+        "movie_genre" : "Crime|Drama|Film-Noir",
+        "production_year" : 2000,
+        "budget" : 12679
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506840"),
+        "id" : 22,
+        "movie_name" : "No Holds Barred",
+        "movie_genre" : "Action",
+        "production_year" : 1991,
+        "budget" : 17570
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506844"),
+        "id" : 26,
+        "movie_name" : "Adversary, The (L'adversaire)",
+        "movie_genre" : "Crime|Drama|Mystery|Thriller",
+        "production_year" : 1990,
+        "budget" : 18405
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506845"),
+        "id" : 27,
+        "movie_name" : "Nowhere Boy",
+        "movie_genre" : "Drama",
+        "production_year" : 2018,
+        "budget" : 17960
+}
+Type "it" for more
+> db.movies.find({"budget": {$gte: 12679}}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb4720550682e"),
+        "id" : 4,
+        "movie_name" : "Godzilla",
+        "movie_genre" : "Action|Sci-Fi|Thriller",
+        "production_year" : 2002,
+        "budget" : 14244
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682f"),
+        "id" : 5,
+        "movie_name" : "All About Steve",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 16545
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506830"),
+        "id" : 6,
+        "movie_name" : "Möbius",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 16730
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506832"),
+        "id" : 8,
+        "movie_name" : "Tobruk",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2007,
+        "budget" : 15316
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506834"),
+        "id" : 10,
+        "movie_name" : "Anvil! The Story of Anvil",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2000,
+        "budget" : 13004
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506835"),
+        "id" : 11,
+        "movie_name" : "Tightrope",
+        "movie_genre" : "Thriller",
+        "production_year" : 1997,
+        "budget" : 14036
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506838"),
+        "id" : 14,
+        "movie_name" : "Zorro, the Gay Blade",
+        "movie_genre" : "Comedy",
+        "production_year" : 1993,
+        "budget" : 15596
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683a"),
+        "id" : 16,
+        "movie_name" : "Cheech & Chong's Next Movie",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 19448
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683b"),
+        "id" : 17,
+        "movie_name" : "Sinbad of the Seven Seas",
+        "movie_genre" : "Adventure|Fantasy|Romance",
+        "production_year" : 2009,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683c"),
+        "id" : 18,
+        "movie_name" : "Masti",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 16806
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683d"),
+        "id" : 19,
+        "movie_name" : "Yesterday Girl (Abschied von gestern - Anita G.)",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2000,
+        "budget" : 15882
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683e"),
+        "id" : 20,
+        "movie_name" : "Pandora's Box",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 18005
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683f"),
+        "id" : 21,
+        "movie_name" : "Out of the Fog",
+        "movie_genre" : "Crime|Drama|Film-Noir",
+        "production_year" : 2000,
+        "budget" : 12679
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506840"),
+        "id" : 22,
+        "movie_name" : "No Holds Barred",
+        "movie_genre" : "Action",
+        "production_year" : 1991,
+        "budget" : 17570
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506844"),
+        "id" : 26,
+        "movie_name" : "Adversary, The (L'adversaire)",
+        "movie_genre" : "Crime|Drama|Mystery|Thriller",
+        "production_year" : 1990,
+        "budget" : 18405
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506845"),
+        "id" : 27,
+        "movie_name" : "Nowhere Boy",
+        "movie_genre" : "Drama",
+        "production_year" : 2018,
+        "budget" : 17960
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506846"),
+        "id" : 28,
+        "movie_name" : "Looking for Palladin",
+        "movie_genre" : "Comedy",
+        "production_year" : 2002,
+        "budget" : 17056
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506849"),
+        "id" : 31,
+        "movie_name" : "Place in the Sun, A (En plats i solen)",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 1992,
+        "budget" : 15230
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550684a"),
+        "id" : 32,
+        "movie_name" : "Death Hunt",
+        "movie_genre" : "Action|Adventure|Crime|Thriller",
+        "production_year" : 2002,
+        "budget" : 14962
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550684b"),
+        "id" : 33,
+        "movie_name" : "Platoon",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2013,
+        "budget" : 14632
+}
+Type "it" for more
+> db.movies.find({"budget": {$lte: 12679}}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb4720550682b"),
+        "id" : 1,
+        "movie_name" : "Going the Distance",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1996,
+        "budget" : 12118
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682c"),
+        "id" : 2,
+        "movie_name" : "Seasoning House, The",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1994,
+        "budget" : 12373
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682d"),
+        "id" : 3,
+        "movie_name" : "English Surgeon, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 1999,
+        "budget" : 11939
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506831"),
+        "id" : 7,
+        "movie_name" : "Children of a Lesser God",
+        "movie_genre" : "Drama",
+        "production_year" : 2002,
+        "budget" : 10138
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506833"),
+        "id" : 9,
+        "movie_name" : "Romancing the Stone",
+        "movie_genre" : "Action|Adventure|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 12515
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506836"),
+        "id" : 12,
+        "movie_name" : "Sabotage",
+        "movie_genre" : "Action|Crime|Drama",
+        "production_year" : 1991,
+        "budget" : 11349
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506837"),
+        "id" : 13,
+        "movie_name" : "O Auto da Compadecida (Dog's Will, A)",
+        "movie_genre" : "Adventure|Comedy",
+        "production_year" : 1991,
+        "budget" : 9457
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506839"),
+        "id" : 15,
+        "movie_name" : "Lonesome Dove",
+        "movie_genre" : "Adventure|Drama|Western",
+        "production_year" : 2006,
+        "budget" : 12346
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683f"),
+        "id" : 21,
+        "movie_name" : "Out of the Fog",
+        "movie_genre" : "Crime|Drama|Film-Noir",
+        "production_year" : 2000,
+        "budget" : 12679
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506841"),
+        "id" : 23,
+        "movie_name" : "Hotel New Hampshire, The",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 11449
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506842"),
+        "id" : 24,
+        "movie_name" : "Statement, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2003,
+        "budget" : 10992
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506843"),
+        "id" : 25,
+        "movie_name" : "Milk of Sorrow, The (Teta asustada, La)",
+        "movie_genre" : "Drama",
+        "production_year" : 2006,
+        "budget" : 10591
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506847"),
+        "id" : 29,
+        "movie_name" : "Drag Me to Hell",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 2013,
+        "budget" : 9683
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506848"),
+        "id" : 30,
+        "movie_name" : "There's Always A Woman",
+        "movie_genre" : "Comedy|Mystery",
+        "production_year" : 1990,
+        "budget" : 9232
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550684c"),
+        "id" : 34,
+        "movie_name" : "Dragon Age: Redemption",
+        "movie_genre" : "Action|Adventure|Fantasy",
+        "production_year" : 1997,
+        "budget" : 10996
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506854"),
+        "id" : 42,
+        "movie_name" : "Loving Father, A (Aime ton père)",
+        "movie_genre" : "Drama",
+        "production_year" : 1998,
+        "budget" : 9066
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506858"),
+        "id" : 46,
+        "movie_name" : "Stomp the Yard",
+        "movie_genre" : "Drama|Musical",
+        "production_year" : 1993,
+        "budget" : 12611
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506859"),
+        "id" : 47,
+        "movie_name" : "Katalin Varga",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2019,
+        "budget" : 11689
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550685a"),
+        "id" : 48,
+        "movie_name" : "Thomas Crown Affair, The",
+        "movie_genre" : "Action|Mystery",
+        "production_year" : 2008,
+        "budget" : 9744
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506863"),
+        "id" : 57,
+        "movie_name" : "Punch-Drunk Love",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2001,
+        "budget" : 9346
+}
+Type "it" for more
+> db.movies.find({$and: [{"production_year":{$gt:2000}}, {"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb4720550682e"),
+        "id" : 4,
+        "movie_name" : "Godzilla",
+        "movie_genre" : "Action|Sci-Fi|Thriller",
+        "production_year" : 2002,
+        "budget" : 14244
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682f"),
+        "id" : 5,
+        "movie_name" : "All About Steve",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 16545
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506831"),
+        "id" : 7,
+        "movie_name" : "Children of a Lesser God",
+        "movie_genre" : "Drama",
+        "production_year" : 2002,
+        "budget" : 10138
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506832"),
+        "id" : 8,
+        "movie_name" : "Tobruk",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2007,
+        "budget" : 15316
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506839"),
+        "id" : 15,
+        "movie_name" : "Lonesome Dove",
+        "movie_genre" : "Adventure|Drama|Western",
+        "production_year" : 2006,
+        "budget" : 12346
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683a"),
+        "id" : 16,
+        "movie_name" : "Cheech & Chong's Next Movie",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 19448
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683b"),
+        "id" : 17,
+        "movie_name" : "Sinbad of the Seven Seas",
+        "movie_genre" : "Adventure|Fantasy|Romance",
+        "production_year" : 2009,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683c"),
+        "id" : 18,
+        "movie_name" : "Masti",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 16806
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506841"),
+        "id" : 23,
+        "movie_name" : "Hotel New Hampshire, The",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 11449
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506842"),
+        "id" : 24,
+        "movie_name" : "Statement, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2003,
+        "budget" : 10992
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506843"),
+        "id" : 25,
+        "movie_name" : "Milk of Sorrow, The (Teta asustada, La)",
+        "movie_genre" : "Drama",
+        "production_year" : 2006,
+        "budget" : 10591
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506845"),
+        "id" : 27,
+        "movie_name" : "Nowhere Boy",
+        "movie_genre" : "Drama",
+        "production_year" : 2018,
+        "budget" : 17960
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506846"),
+        "id" : 28,
+        "movie_name" : "Looking for Palladin",
+        "movie_genre" : "Comedy",
+        "production_year" : 2002,
+        "budget" : 17056
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550684a"),
+        "id" : 32,
+        "movie_name" : "Death Hunt",
+        "movie_genre" : "Action|Adventure|Crime|Thriller",
+        "production_year" : 2002,
+        "budget" : 14962
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550684b"),
+        "id" : 33,
+        "movie_name" : "Platoon",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2013,
+        "budget" : 14632
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550684e"),
+        "id" : 36,
+        "movie_name" : "Cathy Come Home",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 14090
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506850"),
+        "id" : 38,
+        "movie_name" : "Leopard Man, The",
+        "movie_genre" : "Drama|Horror|Mystery|Thriller",
+        "production_year" : 2018,
+        "budget" : 19855
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506852"),
+        "id" : 40,
+        "movie_name" : "Jackass 2.5",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2003,
+        "budget" : 18836
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506853"),
+        "id" : 41,
+        "movie_name" : "Burnt by the Sun (Utomlyonnye solntsem)",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 13546
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506855"),
+        "id" : 43,
+        "movie_name" : "Questo piccolo grande amore",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2020,
+        "budget" : 14690
+}
+Type "it" for more
+> db.movies.find({$or: [{"production_year":{$gt:2000}}, {"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb4720550682b"),
+        "id" : 1,
+        "movie_name" : "Going the Distance",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1996,
+        "budget" : 12118
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682c"),
+        "id" : 2,
+        "movie_name" : "Seasoning House, The",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1994,
+        "budget" : 12373
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682d"),
+        "id" : 3,
+        "movie_name" : "English Surgeon, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 1999,
+        "budget" : 11939
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682e"),
+        "id" : 4,
+        "movie_name" : "Godzilla",
+        "movie_genre" : "Action|Sci-Fi|Thriller",
+        "production_year" : 2002,
+        "budget" : 14244
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682f"),
+        "id" : 5,
+        "movie_name" : "All About Steve",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 16545
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506830"),
+        "id" : 6,
+        "movie_name" : "Möbius",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 16730
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506831"),
+        "id" : 7,
+        "movie_name" : "Children of a Lesser God",
+        "movie_genre" : "Drama",
+        "production_year" : 2002,
+        "budget" : 10138
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506832"),
+        "id" : 8,
+        "movie_name" : "Tobruk",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2007,
+        "budget" : 15316
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506833"),
+        "id" : 9,
+        "movie_name" : "Romancing the Stone",
+        "movie_genre" : "Action|Adventure|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 12515
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506834"),
+        "id" : 10,
+        "movie_name" : "Anvil! The Story of Anvil",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2000,
+        "budget" : 13004
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506835"),
+        "id" : 11,
+        "movie_name" : "Tightrope",
+        "movie_genre" : "Thriller",
+        "production_year" : 1997,
+        "budget" : 14036
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506836"),
+        "id" : 12,
+        "movie_name" : "Sabotage",
+        "movie_genre" : "Action|Crime|Drama",
+        "production_year" : 1991,
+        "budget" : 11349
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506838"),
+        "id" : 14,
+        "movie_name" : "Zorro, the Gay Blade",
+        "movie_genre" : "Comedy",
+        "production_year" : 1993,
+        "budget" : 15596
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506839"),
+        "id" : 15,
+        "movie_name" : "Lonesome Dove",
+        "movie_genre" : "Adventure|Drama|Western",
+        "production_year" : 2006,
+        "budget" : 12346
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683a"),
+        "id" : 16,
+        "movie_name" : "Cheech & Chong's Next Movie",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 19448
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683b"),
+        "id" : 17,
+        "movie_name" : "Sinbad of the Seven Seas",
+        "movie_genre" : "Adventure|Fantasy|Romance",
+        "production_year" : 2009,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683c"),
+        "id" : 18,
+        "movie_name" : "Masti",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 16806
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683d"),
+        "id" : 19,
+        "movie_name" : "Yesterday Girl (Abschied von gestern - Anita G.)",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2000,
+        "budget" : 15882
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683e"),
+        "id" : 20,
+        "movie_name" : "Pandora's Box",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 18005
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683f"),
+        "id" : 21,
+        "movie_name" : "Out of the Fog",
+        "movie_genre" : "Crime|Drama|Film-Noir",
+        "production_year" : 2000,
+        "budget" : 12679
+}
+Type "it" for more
+> db.movies.find({$nor: [{"production_year":{$gt:2000}}, {"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb47205506837"),
+        "id" : 13,
+        "movie_name" : "O Auto da Compadecida (Dog's Will, A)",
+        "movie_genre" : "Adventure|Comedy",
+        "production_year" : 1991,
+        "budget" : 9457
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506848"),
+        "id" : 30,
+        "movie_name" : "There's Always A Woman",
+        "movie_genre" : "Comedy|Mystery",
+        "production_year" : 1990,
+        "budget" : 9232
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506854"),
+        "id" : 42,
+        "movie_name" : "Loving Father, A (Aime ton père)",
+        "movie_genre" : "Drama",
+        "production_year" : 1998,
+        "budget" : 9066
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506883"),
+        "id" : 89,
+        "movie_name" : "Time to Leave",
+        "movie_genre" : "Drama",
+        "production_year" : 1990,
+        "budget" : 9319
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506896"),
+        "id" : 108,
+        "movie_name" : "Space Battleship Yamato",
+        "movie_genre" : "Action|Adventure|Drama",
+        "production_year" : 1998,
+        "budget" : 9911
+}
+{
+        "_id" : ObjectId("622a034e628eb472055068bc"),
+        "id" : 146,
+        "movie_name" : "Phenomenon",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 1996,
+        "budget" : 9460
+}
+{
+        "_id" : ObjectId("622a034e628eb472055068c9"),
+        "id" : 159,
+        "movie_name" : "Somebody Up There Likes Me",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1997,
+        "budget" : 9949
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506905"),
+        "id" : 219,
+        "movie_name" : "The Dependent",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 1999,
+        "budget" : 9885
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550691e"),
+        "id" : 244,
+        "movie_name" : "Killer Shrews, The",
+        "movie_genre" : "Horror|Sci-Fi",
+        "production_year" : 1996,
+        "budget" : 9851
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506946"),
+        "id" : 284,
+        "movie_name" : "The Photographer",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 9362
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506965"),
+        "id" : 315,
+        "movie_name" : "W Delta Z (a.k.a. The Killing Gene)",
+        "movie_genre" : "Crime|Horror|Thriller",
+        "production_year" : 1999,
+        "budget" : 9576
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550696e"),
+        "id" : 324,
+        "movie_name" : "Tetsuo, the Ironman (Tetsuo)",
+        "movie_genre" : "Action|Horror|Sci-Fi|Thriller",
+        "production_year" : 1999,
+        "budget" : 9166
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506971"),
+        "id" : 327,
+        "movie_name" : "Whole Night, A (Toute une nuit)",
+        "movie_genre" : "Drama",
+        "production_year" : 1990,
+        "budget" : 9000
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506997"),
+        "id" : 365,
+        "movie_name" : "Grand Masti",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1991,
+        "budget" : 9506
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550699d"),
+        "id" : 371,
+        "movie_name" : "M. Butterfly",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 1994,
+        "budget" : 9679
+}
+{
+        "_id" : ObjectId("622a034e628eb472055069c7"),
+        "id" : 413,
+        "movie_name" : "Mouse on the Moon, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 1996,
+        "budget" : 9409
+}
+> db.movies.find({$or: [{"production_year":{$ne:2000}}, {"budget":{$ne:10000}}]}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb4720550682b"),
+        "id" : 1,
+        "movie_name" : "Going the Distance",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1996,
+        "budget" : 12118
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682c"),
+        "id" : 2,
+        "movie_name" : "Seasoning House, The",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1994,
+        "budget" : 12373
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682d"),
+        "id" : 3,
+        "movie_name" : "English Surgeon, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 1999,
+        "budget" : 11939
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682e"),
+        "id" : 4,
+        "movie_name" : "Godzilla",
+        "movie_genre" : "Action|Sci-Fi|Thriller",
+        "production_year" : 2002,
+        "budget" : 14244
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682f"),
+        "id" : 5,
+        "movie_name" : "All About Steve",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 16545
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506830"),
+        "id" : 6,
+        "movie_name" : "Möbius",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 16730
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506831"),
+        "id" : 7,
+        "movie_name" : "Children of a Lesser God",
+        "movie_genre" : "Drama",
+        "production_year" : 2002,
+        "budget" : 10138
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506832"),
+        "id" : 8,
+        "movie_name" : "Tobruk",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2007,
+        "budget" : 15316
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506833"),
+        "id" : 9,
+        "movie_name" : "Romancing the Stone",
+        "movie_genre" : "Action|Adventure|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 12515
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506834"),
+        "id" : 10,
+        "movie_name" : "Anvil! The Story of Anvil",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2000,
+        "budget" : 13004
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506835"),
+        "id" : 11,
+        "movie_name" : "Tightrope",
+        "movie_genre" : "Thriller",
+        "production_year" : 1997,
+        "budget" : 14036
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506836"),
+        "id" : 12,
+        "movie_name" : "Sabotage",
+        "movie_genre" : "Action|Crime|Drama",
+        "production_year" : 1991,
+        "budget" : 11349
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506837"),
+        "id" : 13,
+        "movie_name" : "O Auto da Compadecida (Dog's Will, A)",
+        "movie_genre" : "Adventure|Comedy",
+        "production_year" : 1991,
+        "budget" : 9457
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506838"),
+        "id" : 14,
+        "movie_name" : "Zorro, the Gay Blade",
+        "movie_genre" : "Comedy",
+        "production_year" : 1993,
+        "budget" : 15596
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506839"),
+        "id" : 15,
+        "movie_name" : "Lonesome Dove",
+        "movie_genre" : "Adventure|Drama|Western",
+        "production_year" : 2006,
+        "budget" : 12346
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683a"),
+        "id" : 16,
+        "movie_name" : "Cheech & Chong's Next Movie",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 19448
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683b"),
+        "id" : 17,
+        "movie_name" : "Sinbad of the Seven Seas",
+        "movie_genre" : "Adventure|Fantasy|Romance",
+        "production_year" : 2009,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683c"),
+        "id" : 18,
+        "movie_name" : "Masti",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 16806
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683d"),
+        "id" : 19,
+        "movie_name" : "Yesterday Girl (Abschied von gestern - Anita G.)",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2000,
+        "budget" : 15882
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683e"),
+        "id" : 20,
+        "movie_name" : "Pandora's Box",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 18005
+}
+Type "it" for more
+> db.movies.find({$and: [{"production_year":{$gt:2000}}, {"production_year":{$lt:2010}}]}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb4720550682e"),
+        "id" : 4,
+        "movie_name" : "Godzilla",
+        "movie_genre" : "Action|Sci-Fi|Thriller",
+        "production_year" : 2002,
+        "budget" : 14244
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550682f"),
+        "id" : 5,
+        "movie_name" : "All About Steve",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 16545
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506831"),
+        "id" : 7,
+        "movie_name" : "Children of a Lesser God",
+        "movie_genre" : "Drama",
+        "production_year" : 2002,
+        "budget" : 10138
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506832"),
+        "id" : 8,
+        "movie_name" : "Tobruk",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2007,
+        "budget" : 15316
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506839"),
+        "id" : 15,
+        "movie_name" : "Lonesome Dove",
+        "movie_genre" : "Adventure|Drama|Western",
+        "production_year" : 2006,
+        "budget" : 12346
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683a"),
+        "id" : 16,
+        "movie_name" : "Cheech & Chong's Next Movie",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 19448
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550683b"),
+        "id" : 17,
+        "movie_name" : "Sinbad of the Seven Seas",
+        "movie_genre" : "Adventure|Fantasy|Romance",
+        "production_year" : 2009,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506841"),
+        "id" : 23,
+        "movie_name" : "Hotel New Hampshire, The",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 11449
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506842"),
+        "id" : 24,
+        "movie_name" : "Statement, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2003,
+        "budget" : 10992
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506843"),
+        "id" : 25,
+        "movie_name" : "Milk of Sorrow, The (Teta asustada, La)",
+        "movie_genre" : "Drama",
+        "production_year" : 2006,
+        "budget" : 10591
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506846"),
+        "id" : 28,
+        "movie_name" : "Looking for Palladin",
+        "movie_genre" : "Comedy",
+        "production_year" : 2002,
+        "budget" : 17056
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550684a"),
+        "id" : 32,
+        "movie_name" : "Death Hunt",
+        "movie_genre" : "Action|Adventure|Crime|Thriller",
+        "production_year" : 2002,
+        "budget" : 14962
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550684e"),
+        "id" : 36,
+        "movie_name" : "Cathy Come Home",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 14090
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506852"),
+        "id" : 40,
+        "movie_name" : "Jackass 2.5",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2003,
+        "budget" : 18836
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506856"),
+        "id" : 44,
+        "movie_name" : "Skylark",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2008,
+        "budget" : 15798
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550685a"),
+        "id" : 48,
+        "movie_name" : "Thomas Crown Affair, The",
+        "movie_genre" : "Action|Mystery",
+        "production_year" : 2008,
+        "budget" : 9744
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550685c"),
+        "id" : 50,
+        "movie_name" : "Loves of Pharaoh, The (Das Weib des Pharao)",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2008,
+        "budget" : 19106
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550685e"),
+        "id" : 52,
+        "movie_name" : "Flesh and Bone",
+        "movie_genre" : "Drama|Mystery|Romance",
+        "production_year" : 2004,
+        "budget" : 18220
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506863"),
+        "id" : 57,
+        "movie_name" : "Punch-Drunk Love",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2001,
+        "budget" : 9346
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506864"),
+        "id" : 58,
+        "movie_name" : "Barbershop",
+        "movie_genre" : "Comedy",
+        "production_year" : 2004,
+        "budget" : 19897
+}
+Type "it" for more
+> db.movies.find().sort({production_year:-1,movie_name:1}).pretty()
+{
+        "_id" : ObjectId("622a034e628eb47205506a01"),
+        "id" : 471,
+        "movie_name" : "All the Colors of the Dark",
+        "movie_genre" : "Horror|Mystery|Thriller",
+        "production_year" : 2020,
+        "budget" : 19761
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506887"),
+        "id" : 93,
+        "movie_name" : "Caged Heat",
+        "movie_genre" : "Action",
+        "production_year" : 2020,
+        "budget" : 17488
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506945"),
+        "id" : 283,
+        "movie_name" : "Cat-Women of the Moon (a.k.a. Rocket to the Moon)",
+        "movie_genre" : "Adventure|Sci-Fi",
+        "production_year" : 2020,
+        "budget" : 14418
+}
+{
+        "_id" : ObjectId("622a034e628eb472055068f8"),
+        "id" : 206,
+        "movie_name" : "Comet",
+        "movie_genre" : "Comedy|Drama|Romance|Sci-Fi",
+        "production_year" : 2020,
+        "budget" : 9399
+}
+{
+        "_id" : ObjectId("622a034e628eb472055068d7"),
+        "id" : 173,
+        "movie_name" : "Cousins in Love (a.k.a. Tender Cousins) (Tendres Cousines)",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2020,
+        "budget" : 19345
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550686f"),
+        "id" : 69,
+        "movie_name" : "Down Terrace",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "production_year" : 2020,
+        "budget" : 19970
+}
+{
+        "_id" : ObjectId("622a034e628eb472055069ff"),
+        "id" : 469,
+        "movie_name" : "Exorcist, The",
+        "movie_genre" : "Horror|Mystery",
+        "production_year" : 2020,
+        "budget" : 15251
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506901"),
+        "id" : 215,
+        "movie_name" : "Last Action Hero",
+        "movie_genre" : "Action|Adventure|Comedy|Fantasy",
+        "production_year" : 2020,
+        "budget" : 10328
+}
+{
+        "_id" : ObjectId("622a034e628eb472055069a4"),
+        "id" : 378,
+        "movie_name" : "Miss Julie",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 12897
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506999"),
+        "id" : 367,
+        "movie_name" : "Numb",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2020,
+        "budget" : 10164
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506935"),
+        "id" : 267,
+        "movie_name" : "Our Dancing Daughters",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 19476
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506969"),
+        "id" : 319,
+        "movie_name" : "Over Your Cities Grass Will Grow",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 14520
+}
+{
+        "_id" : ObjectId("622a034e628eb472055068c2"),
+        "id" : 152,
+        "movie_name" : "Pax Americana and the Weaponization of Space",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 14282
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506855"),
+        "id" : 43,
+        "movie_name" : "Questo piccolo grande amore",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2020,
+        "budget" : 14690
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506927"),
+        "id" : 253,
+        "movie_name" : "Snowmageddon",
+        "movie_genre" : "Adventure|Fantasy",
+        "production_year" : 2020,
+        "budget" : 15970
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550695f"),
+        "id" : 309,
+        "movie_name" : "Soft Shell Man (Un crabe dans la tête)",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2020,
+        "budget" : 12142
+}
+{
+        "_id" : ObjectId("622a034e628eb472055069a5"),
+        "id" : 379,
+        "movie_name" : "Something Ventured",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 18812
+}
+{
+        "_id" : ObjectId("622a034e628eb4720550696a"),
+        "id" : 320,
+        "movie_name" : "Arrival II",
+        "movie_genre" : "Action|Adventure|Sci-Fi",
+        "production_year" : 2019,
+        "budget" : 18569
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506991"),
+        "id" : 359,
+        "movie_name" : "Child of God",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2019,
+        "budget" : 9643
+}
+{
+        "_id" : ObjectId("622a034e628eb472055068aa"),
+        "id" : 128,
+        "movie_name" : "Child's Pose",
+        "movie_genre" : "Drama",
+        "production_year" : 2019,
+        "budget" : 15017
+}
+Type "it" for more
+> db.movies.find().sort({production_year:-1,movie_name:1}).skip(10).limit(5).pretty()
+{
+        "_id" : ObjectId("622a034e628eb47205506935"),
+        "id" : 267,
+        "movie_name" : "Our Dancing Daughters",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 19476
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506969"),
+        "id" : 319,
+        "movie_name" : "Over Your Cities Grass Will Grow",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 14520
+}
+{
+        "_id" : ObjectId("622a034e628eb472055068c2"),
+        "id" : 152,
+        "movie_name" : "Pax Americana and the Weaponization of Space",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 14282
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506855"),
+        "id" : 43,
+        "movie_name" : "Questo piccolo grande amore",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2020,
+        "budget" : 14690
+}
+{
+        "_id" : ObjectId("622a034e628eb47205506927"),
+        "id" : 253,
+        "movie_name" : "Snowmageddon",
+        "movie_genre" : "Adventure|Fantasy",
+        "production_year" : 2020,
+        "budget" : 15970
+}
